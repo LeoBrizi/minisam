@@ -26,8 +26,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 */
 
-#include "Eigen/src/Core/util/NonMPL2.h"
-#include "Eigen/src/OrderingMethods/Amd.h"
+#include <Eigen/OrderingMethods>
 
 #ifndef EIGEN_SPARSE_AMD_MINISAM_PATCHED_H
 #define EIGEN_SPARSE_AMD_MINISAM_PATCHED_H

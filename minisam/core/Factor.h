@@ -16,6 +16,7 @@
 #include <set>
 #include <utility>
 #include <vector>
+#include <cassert>
 
 namespace minisam {
 

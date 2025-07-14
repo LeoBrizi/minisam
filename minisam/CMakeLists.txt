@@ -12,10 +12,9 @@ set(MINISAM_SUBDIRS
 )
 
 # add multi-view geometry and SLAM module if selected
-if(MINISAM_USE_SOPHUS)
-  list(APPEND MINISAM_SUBDIRS geometry)
-  list(APPEND MINISAM_SUBDIRS slam)
-endif()
+
+list(APPEND MINISAM_SUBDIRS geometry)
+list(APPEND MINISAM_SUBDIRS slam)
 
 # add CUDA module if selected
 if(MINISAM_USE_CUSOLVER)

@@ -1,7 +1,7 @@
 
 # cloned dependency: pybind11
 # add path and search for python installed
-add_subdirectory(pybind11)
+# add_subdirectory(pybind11)
 
 # --------------------------------------
 # wrap sophus
@@ -39,10 +39,10 @@ set(EXCLUDED_WRAPPER_SRCS " ")
 file(GLOB MINISAM_WRAPPER_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "minisam_wrapper/*.cpp")
 
 # remove unused module
-if(NOT MINISAM_USE_SOPHUS)
-  list(APPEND EXCLUDED_WRAPPER_SRCS "minisam_wrapper/geometry.cpp")
-  list(APPEND EXCLUDED_WRAPPER_SRCS "minisam_wrapper/slam.cpp")
-endif()
+# if(NOT MINISAM_USE_SOPHUS)
+#   list(APPEND EXCLUDED_WRAPPER_SRCS "minisam_wrapper/geometry.cpp")
+#   list(APPEND EXCLUDED_WRAPPER_SRCS "minisam_wrapper/slam.cpp")
+# endif()
 
 # remove blocked tests
 list(REMOVE_ITEM MINISAM_WRAPPER_SRCS ${EXCLUDED_WRAPPER_SRCS})
@@ -50,6 +50,8 @@ list(REMOVE_ITEM MINISAM_WRAPPER_SRCS ${EXCLUDED_WRAPPER_SRCS})
 
 # wrapper lib
 set(MINISAM_WRAPPER_TARGET_NAME "_minisam_py_wrapper")
+
+message("Building minisam python wrapper with sources: ${MINISAM_WRAPPER_SRCS}")
 
 # add wrapper source
 add_library(${MINISAM_WRAPPER_TARGET_NAME} MODULE ${MINISAM_WRAPPER_SRCS})

@@ -12,6 +12,7 @@
 
 #include <Eigen/Core>
 #include <iostream>
+#include <cassert>
 
 namespace minisam {
 
